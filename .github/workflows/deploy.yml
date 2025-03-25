@@ -18,11 +18,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
+          cache: false
       - name: Clean install dependencies
         run: |
-          rm -rf node_modules package-lock.json
-          npm cache clean --force
           npm install
       - name: Build
         run: npm run build
