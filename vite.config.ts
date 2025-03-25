@@ -26,13 +26,7 @@ export default defineConfig(({ mode }) => ({
       }
     },
     // Оптимизируем сборку для быстрой загрузки
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    },
+    minify: 'esbuild',
     cssMinify: true,
     target: 'es2015',  // Целевые современные браузеры для уменьшения размера бандла
     // Разделяем код на чанки для оптимизации загрузки
