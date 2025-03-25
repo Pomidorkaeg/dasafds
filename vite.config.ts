@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -27,12 +26,24 @@ export default defineConfig(({ mode }) => ({
       }
     },
     // Оптимизируем сборку для быстрой загрузки
-    minify: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
     cssMinify: true,
     target: 'es2015',  // Целевые современные браузеры для уменьшения размера бандла
     // Разделяем код на чанки для оптимизации загрузки
     chunkSizeWarningLimit: 500,
-    sourcemap: false
+    sourcemap: false,
+    // Добавляем предварительную загрузку критических ресурсов
+    assetsInlineLimit: 4096,
+    // Оптимизируем изображения
+    assetsDir: 'assets',
+    // Включаем сжатие Brotli
+    brotliSize: true
   },
   plugins: [
     react(),
