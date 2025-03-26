@@ -37,7 +37,7 @@ const TeamDetail: React.FC<TeamDetailProps> = ({ team }) => {
       {/* Main Content */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Column - Details */}
-        <div className="md:col-span-2 space-y-6">
+        <div className="md:col-span-3 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-md">
               <h2 className="text-xl font-bold mb-4">О команде</h2>
@@ -161,14 +161,6 @@ const TeamDetail: React.FC<TeamDetailProps> = ({ team }) => {
                 )}
               </div>
             </div>
-          </div>
-        </div>
-        
-        {/* Right Column - Info Cards */}
-        <div className="space-y-6">
-          <div className="bg-white p-6 rounded-xl shadow-md">
-            <h2 className="text-xl font-bold mb-4" style={{ color: team.primaryColor }}>Главный тренер</h2>
-            <p className="opacity-90 text-lg">{team.coach}</p>
           </div>
         </div>
       </div>

@@ -103,47 +103,47 @@ const Index = () => {
   ];
   
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
       
       <main className="flex-grow">
         <Hero />
         
         {/* Tournaments Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">Турниры</h2>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold text-gray-900">Турниры</h2>
               <Link
                 to="/tournaments"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-fc-green hover:bg-fc-green-dark transition-colors"
+                className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded text-gray-700 bg-white hover:bg-gray-50"
               >
                 Все турниры
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {tournaments.map((tournament) => (
                 <div
                   key={tournament.id}
-                  className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+                  className="bg-white rounded border border-gray-200 overflow-hidden"
                 >
-                  <div className="relative h-48">
+                  <div className="relative h-40">
                     <img
                       src={tournament.image}
                       alt={tournament.name}
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-lg font-semibold text-white">{tournament.name}</h3>
-                      <p className="text-sm text-gray-200">{tournament.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-3">
+                      <h3 className="text-base font-medium text-white">{tournament.name}</h3>
+                      <p className="text-xs text-gray-200">{tournament.description}</p>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Calendar className="h-4 w-4 mr-1" />
+                  <div className="p-3">
+                    <div className="flex items-center text-xs text-gray-500">
+                      <CalendarDays className="h-3 w-3 mr-1" />
                       <span>{tournament.date}</span>
                     </div>
                   </div>
@@ -154,35 +154,35 @@ const Index = () => {
         </section>
 
         {/* Upcoming Matches Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">Ближайшие матчи</h2>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold text-gray-900">Ближайшие матчи</h2>
               <Link
                 to="/matches"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-fc-green hover:bg-fc-green-dark transition-colors"
+                className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded text-gray-700 bg-white hover:bg-gray-50"
               >
                 Все матчи
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {upcomingMatches.map((match) => (
                 <div
                   key={match.id}
-                  className="bg-white rounded-lg shadow-sm border border-gray-200 p-4"
+                  className="bg-white rounded border border-gray-200 p-3"
                 >
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
-                      <span className="font-medium">{match.homeTeam.name}</span>
+                      <span className="font-medium text-sm">{match.homeTeam.name}</span>
                     </div>
-                    <span className="text-gray-500">VS</span>
+                    <span className="text-gray-500 text-sm">VS</span>
                     <div className="flex items-center">
-                      <span className="font-medium">{match.awayTeam.name}</span>
+                      <span className="font-medium text-sm">{match.awayTeam.name}</span>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between text-sm text-gray-500">
+                  <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>{match.date}</span>
                     <span>{match.time}</span>
                   </div>
@@ -193,35 +193,35 @@ const Index = () => {
         </section>
 
         {/* Latest News Section */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">Последние новости</h2>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold text-gray-900">Последние новости</h2>
               <Link
                 to="/news"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-fc-green hover:bg-fc-green-dark transition-colors"
+                className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded text-gray-700 bg-white hover:bg-gray-50"
               >
                 Все новости
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {recentNews.map((news) => (
                 <div
                   key={news.id}
-                  className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+                  className="bg-white rounded border border-gray-200 overflow-hidden"
                 >
                   <img
                     src={news.image}
                     alt={news.title}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-40 object-cover"
                   />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{news.title}</h3>
-                    <p className="text-sm text-gray-500 mb-4">{news.excerpt}</p>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Calendar className="h-4 w-4 mr-1" />
+                  <div className="p-3">
+                    <h3 className="text-base font-medium text-gray-900 mb-1">{news.title}</h3>
+                    <p className="text-xs text-gray-500 mb-2">{news.excerpt}</p>
+                    <div className="flex items-center text-xs text-gray-500">
+                      <CalendarDays className="h-3 w-3 mr-1" />
                       <span>{news.date}</span>
                     </div>
                   </div>
@@ -232,64 +232,61 @@ const Index = () => {
         </section>
 
         {/* Media Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">Медиа</h2>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold text-gray-900">Медиа</h2>
               <Link
                 to="/media"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-fc-green hover:bg-fc-green-dark transition-colors"
+                className="inline-flex items-center px-3 py-1.5 border border-gray-300 text-sm font-medium rounded text-gray-700 bg-white hover:bg-gray-50"
               >
                 Все медиа
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="relative aspect-square rounded-lg overflow-hidden">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              <div className="relative aspect-square rounded border border-gray-200 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Team Photo"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="text-white text-sm font-medium">Тренировка команды</span>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <span className="text-white text-xs font-medium">Тренировка команды</span>
                 </div>
               </div>
               
-              <div className="relative aspect-square rounded-lg overflow-hidden">
+              <div className="relative aspect-square rounded border border-gray-200 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1550881111-7cfde14b8073?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
                   alt="Match Photo"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="text-white text-sm font-medium">Матч с ФК Динамо</span>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <span className="text-white text-xs font-medium">Матч с ФК Динамо</span>
                 </div>
               </div>
               
-              <div className="relative aspect-square rounded-lg overflow-hidden">
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <Video className="text-white w-12 h-12" />
-                </div>
+              <div className="relative aspect-square rounded border border-gray-200 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
                   alt="Video Thumbnail"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="text-white text-sm font-medium">Обзор матча</span>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <Video className="text-white w-8 h-8" />
                 </div>
               </div>
               
-              <div className="relative aspect-square rounded-lg overflow-hidden">
+              <div className="relative aspect-square rounded border border-gray-200 overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2093&q=80"
                   alt="Stadium Photo"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="text-white text-sm font-medium">Стадион имени А.П. Соколова</span>
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                  <span className="text-white text-xs font-medium">Стадион имени А.П. Соколова</span>
                 </div>
               </div>
             </div>
