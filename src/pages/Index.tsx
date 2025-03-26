@@ -86,14 +86,14 @@ const Index = () => {
   ];
   
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white">
       <Navbar />
       
       <main className="flex-grow page-transition">
         <Hero />
         
         {/* Tournaments Section */}
-        <section className="section-padding bg-gradient-to-br from-white to-gray-50">
+        <section className="section-padding bg-gradient-to-br from-emerald-50 to-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
               <div>
@@ -114,7 +114,7 @@ const Index = () => {
                 <Link
                   key={tournament.id}
                   to={`/tournaments/${tournament.id}`}
-                  className="group rounded-xl overflow-hidden shadow-lg hover:shadow-xl border border-gray-200 card-hover bg-white transition-all duration-300"
+                  className="group rounded-xl overflow-hidden shadow-lg hover:shadow-xl border border-gray-200 bg-white transition-all duration-300"
                 >
                   <div className="relative aspect-video overflow-hidden">
                     <img 
@@ -150,7 +150,7 @@ const Index = () => {
         </section>
         
         {/* Upcoming Matches Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <section className="section-padding bg-gradient-to-br from-white to-emerald-50">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
               <div>
@@ -211,7 +211,7 @@ const Index = () => {
         </section>
         
         {/* Latest News Section */}
-        <section className="section-padding bg-gradient-to-br from-white to-gray-50">
+        <section className="section-padding bg-gradient-to-br from-emerald-50 to-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
               <div>
@@ -268,7 +268,7 @@ const Index = () => {
         </section>
         
         {/* Media Section */}
-        <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+        <section className="section-padding bg-gradient-to-br from-white to-emerald-50">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
               <div>
