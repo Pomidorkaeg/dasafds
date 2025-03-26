@@ -1,4 +1,3 @@
-
 export interface Team {
   id: string;
   name: string;
@@ -10,7 +9,6 @@ export interface Team {
   foundedYear: number;
   stadium: string;
   achievements: string[];
-  coach: string;
   address: string;
   socialLinks: {
     website?: string;
