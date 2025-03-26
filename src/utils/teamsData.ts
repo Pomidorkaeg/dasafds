@@ -1,3 +1,4 @@
+
 import { Team } from '@/types/team';
 
 // In a production environment, this would be fetched from a database
@@ -17,6 +18,7 @@ let teams: Team[] = [
       'Финалист Кубка области 2019',
       'Победитель турнира "Золотая осень" 2021'
     ],
+    coach: 'Сергей Павлович Иванов',
     address: 'ул. Спортивная, 15, г. Гудаута',
     socialLinks: {
       website: 'https://fcgudauta.example.com',
@@ -40,6 +42,7 @@ let teams: Team[] = [
       'Лауреат премии "Лучшая спортивная школа" 2021',
       'Участник международного юношеского турнира Euro Youth Cup 2023'
     ],
+    coach: 'Дмитрий Александрович Сидоров',
     address: 'ул. Молодёжная, 8, г. Гудаута',
     socialLinks: {
       website: 'https://schoolgudauta.example.com',

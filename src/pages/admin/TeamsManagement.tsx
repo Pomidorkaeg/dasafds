@@ -211,6 +211,16 @@ const TeamsManagement = () => {
                   {/* Details */}
                   <div className="space-y-4">
                     <div>
+                      <Label htmlFor="coach">Главный тренер</Label>
+                      <Input 
+                        id="coach" 
+                        name="coach" 
+                        value={formData.coach} 
+                        onChange={handleChange} 
+                      />
+                    </div>
+                    
+                    <div>
                       <Label htmlFor="foundedYear">Год основания</Label>
                       <Input 
                         id="foundedYear" 
