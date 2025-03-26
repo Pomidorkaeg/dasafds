@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -137,12 +136,12 @@ const Team = () => {
   const staffGudauta: Coach[] = [
     {
       id: '1',
-      name: 'Сергей Павлович Иванов',
+      name: 'Михаил Семенович Федоров',
       role: 'Главный тренер',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
-      since: '2021',
-      experience: 10,
-      biography: 'Опытный тренер с многолетним опытом работы в профессиональных клубах.',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+      since: '2022',
+      experience: 12,
+      biography: 'Специализируется на работе с молодыми футболистами и их развитии.',
       teamId: 'gudauta'
     },
     {
@@ -153,6 +152,26 @@ const Team = () => {
       since: '2022',
       experience: 5,
       biography: 'Бывший профессиональный игрок, перешедший на тренерскую работу.',
+      teamId: 'gudauta'
+    },
+    {
+      id: '3',
+      name: 'Дмитрий Александрович Сидоров',
+      role: 'Тренер вратарей',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+      since: '2022',
+      experience: 7,
+      biography: 'Специализируется на подготовке молодых вратарей высокого уровня.',
+      teamId: 'gudauta'
+    },
+    {
+      id: '4',
+      name: 'Игорь Владимирович Кузнецов',
+      role: 'Физиотерапевт',
+      image: 'https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80',
+      since: '2023',
+      experience: 8,
+      biography: 'Имеет большой опыт работы со спортсменами разных дисциплин.',
       teamId: 'gudauta'
     },
   ];

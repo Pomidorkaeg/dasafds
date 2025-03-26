@@ -1,13 +1,12 @@
-
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-// Improved rendering that ensures all elements are loaded before display
+// Оптимизированная инициализация приложения
 const root = document.getElementById('root')!;
 
-// Create and render the app
+// Используем createRoot с оптимизированными настройками
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />

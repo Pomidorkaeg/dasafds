@@ -1,12 +1,11 @@
-
 import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Lazy-load all route components
+// Оптимизированная ленивая загрузка с предварительной загрузкой
 const Index = lazy(() => import("./pages/Index"));
 const Team = lazy(() => import("./pages/Team"));
 const News = lazy(() => import("./pages/News"));
@@ -16,40 +15,41 @@ const Media = lazy(() => import("./pages/Media"));
 const Contacts = lazy(() => import("./pages/Contacts"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Admin routes
+// Админские маршруты
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const AdminHome = lazy(() => import("./pages/admin/AdminHome"));
 const PlayersManagement = lazy(() => import("./pages/admin/PlayersManagement"));
 const CoachesManagement = lazy(() => import("./pages/admin/CoachesManagement"));
 const TeamsManagement = lazy(() => import("./pages/admin/TeamsManagement"));
 
-// Fallback loading component
+// Улучшенный компонент загрузки
 const PageLoading = () => (
-  <div className="flex h-screen w-full items-center justify-center">
-    <div className="h-10 w-10 animate-spin rounded-full border-4 border-fc-green border-t-transparent"></div>
+  <div className="flex h-screen w-full items-center justify-center bg-white">
+    <div className="h-8 w-8 animate-spin rounded-full border-2 border-green-600 border-t-transparent"></div>
   </div>
 );
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 60 * 1000, // 1 minute
+      staleTime: 60 * 1000, // 1 минута
       refetchOnWindowFocus: false,
+      retry: 1, // Уменьшаем количество попыток
+      timeout: 5000, // Таймаут 5 секунд
     },
   },
 });
 
-// Always use HashRouter for compatibility with GitHub Pages
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <HashRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Suspense fallback={<PageLoading />}>
             <Routes>
-              {/* Public routes */}
+              {/* Публичные маршруты */}
               <Route path="/" element={<Index />} />
               <Route path="/team" element={<Team />} />
               <Route path="/news" element={<News />} />
@@ -59,7 +59,7 @@ const App = () => {
               <Route path="/media" element={<Media />} />
               <Route path="/contacts" element={<Contacts />} />
               
-              {/* Admin routes */}
+              {/* Админские маршруты */}
               <Route path="/admin" element={<AdminDashboard />}>
                 <Route index element={<AdminHome />} />
                 <Route path="players" element={<PlayersManagement />} />
@@ -72,7 +72,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
-        </HashRouter>
+        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   );
