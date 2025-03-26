@@ -25,7 +25,7 @@ const TeamsManagement = lazy(() => import("./pages/admin/TeamsManagement"));
 // Улучшенный компонент загрузки
 const PageLoading = () => (
   <div className="flex h-screen w-full items-center justify-center bg-white">
-    <div className="h-8 w-8 animate-spin rounded-full border-2 border-fc-green border-t-transparent"></div>
+    <div className="h-8 w-8 animate-spin rounded-full border-2 border-green-600 border-t-transparent"></div>
   </div>
 );
 
