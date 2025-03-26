@@ -4,44 +4,48 @@ import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden">
-      {/* Фоновое изображение с градиентным наложением */}
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-gradient-to-r from-fc-green/90 to-fc-darkGreen/80 z-10"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1508098682722-e99c643e7f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)',
+          backgroundImage: `url('https://images.unsplash.com/photo-1508098682722-e99c643e7f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundBlendMode: 'overlay'
         }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/70"></div>
-      </div>
-
-      {/* Контент */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-300 mb-6 drop-shadow-[0_0_3px_rgba(234,179,8,0.3)]">
-            ФК ГУДАУТА
+      ></div>
+      
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+        <div className="animate-slide-up">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            ФК <span className="text-fc-yellow">ГУДАУТА</span>
           </h1>
-          <p className="text-xl md:text-2xl text-yellow-300 mb-8 max-w-3xl mx-auto drop-shadow-[0_0_3px_rgba(234,179,8,0.3)]">
+          
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8">
             Футбольный клуб с богатой историей и традициями
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/tournaments" 
-              className="btn-primary bg-fc-green hover:bg-fc-darkGreen text-white shadow-sm hover:shadow-md transition-all duration-300"
-            >
-              Турнирные таблицы
-              <ArrowRight size={18} className="ml-2" />
-            </Link>
+          
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
             <Link 
               to="/matches" 
-              className="btn-primary bg-white hover:bg-gray-100 text-fc-green border border-white shadow-sm hover:shadow-md transition-all duration-300"
+              className="btn-primary bg-fc-yellow hover:bg-fc-yellow/90 text-fc-darkGreen shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Ближайшие матчи
+              <ArrowRight size={18} />
+            </Link>
+            
+            <Link 
+              to="/tournaments" 
+              className="btn-primary bg-fc-green hover:bg-fc-darkGreen text-white border-2 border-white shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Турнирные таблицы
               <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
         </div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
     </div>
   );
 };
