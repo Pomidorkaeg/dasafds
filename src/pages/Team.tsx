@@ -135,6 +135,16 @@ const Team = () => {
   // Sample staff data
   const staffGudauta: Coach[] = [
     {
+      id: '1',
+      name: 'Михаил Семенович Федоров',
+      role: 'Главный тренер',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+      since: '2022',
+      experience: 12,
+      biography: 'Специализируется на работе с молодыми футболистами и их развитии.',
+      teamId: 'gudauta'
+    },
+    {
       id: '2',
       name: 'Алексей Николаевич Петров',
       role: 'Ассистент тренера',
