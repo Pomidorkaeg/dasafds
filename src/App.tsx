@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Оптимизированная ленивая загрузка с предварительной загрузкой
 const Index = lazy(() => import("./pages/Index"));
@@ -40,14 +40,14 @@ const queryClient = new QueryClient({
   },
 });
 
-// Always use HashRouter for compatibility with GitHub Pages
+// Always use BrowserRouter for GitHub Pages
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <HashRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Suspense fallback={<PageLoading />}>
             <Routes>
               {/* Публичные маршруты */}
@@ -73,7 +73,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
-        </HashRouter>
+        </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   );
