@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -61,32 +61,44 @@ const Index = () => {
     {
       id: '1',
       tournament: '3 Лига ПФЛ',
-      homeTeam: 'ФК Гудаута',
-      awayTeam: 'Динамо',
+      homeTeam: {
+        name: 'ФК Гудаута',
+        logo: 'https://example.com/gudauta-logo.png'
+      },
+      awayTeam: {
+        name: 'Динамо',
+        logo: 'https://example.com/dinamo-logo.png'
+      },
       date: '15.05.2024',
-      time: '19:00',
-      stadium: 'Стадион имени А.П. Соколова',
-      city: 'Гудаута'
+      time: '19:00'
     },
     {
       id: '2',
       tournament: 'Кубок Абхазии',
-      homeTeam: 'ФК Гудаута',
-      awayTeam: 'Рица',
+      homeTeam: {
+        name: 'ФК Гудаута',
+        logo: 'https://example.com/gudauta-logo.png'
+      },
+      awayTeam: {
+        name: 'Рица',
+        logo: 'https://example.com/ritsa-logo.png'
+      },
       date: '20.05.2024',
-      time: '17:00',
-      stadium: 'Стадион имени А.П. Соколова',
-      city: 'Гудаута'
+      time: '17:00'
     },
     {
       id: '3',
       tournament: 'Чемпионат Абхазии',
-      homeTeam: 'ФК Гудаута',
-      awayTeam: 'Нарт',
+      homeTeam: {
+        name: 'ФК Гудаута',
+        logo: 'https://example.com/gudauta-logo.png'
+      },
+      awayTeam: {
+        name: 'Нарт',
+        logo: 'https://example.com/nart-logo.png'
+      },
       date: '25.05.2024',
-      time: '16:00',
-      stadium: 'Стадион имени А.П. Соколова',
-      city: 'Гудаута'
+      time: '16:00'
     }
   ];
   
@@ -95,43 +107,8 @@ const Index = () => {
       <Navbar />
       
       <main className="flex-grow">
-        {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-gray-900 to-gray-800">
-          <div className="absolute inset-0">
-            <img
-              src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              alt="Football stadium"
-              className="w-full h-full object-cover opacity-20"
-            />
-          </div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-white mb-6">
-                Турнирные таблицы
-              </h1>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Следите за результатами матчей и турнирными таблицами всех футбольных турниров
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/tournaments"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-fc-green hover:bg-fc-green-dark transition-colors"
-                >
-                  Турнирные таблицы
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link
-                  to="/matches"
-                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-gray-900 transition-colors"
-                >
-                  Ближайшие матчи
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <Hero />
+        
         {/* Tournaments Section */}
         <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,21 +175,11 @@ const Index = () => {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
-                      <img
-                        src={match.homeTeam.logo}
-                        alt={match.homeTeam.name}
-                        className="h-8 w-8 mr-2"
-                      />
                       <span className="font-medium">{match.homeTeam.name}</span>
                     </div>
                     <span className="text-gray-500">VS</span>
                     <div className="flex items-center">
                       <span className="font-medium">{match.awayTeam.name}</span>
-                      <img
-                        src={match.awayTeam.logo}
-                        alt={match.awayTeam.name}
-                        className="h-8 w-8 ml-2"
-                      />
                     </div>
                   </div>
                   <div className="flex items-center justify-between text-sm text-gray-500">
