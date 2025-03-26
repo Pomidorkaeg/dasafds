@@ -27,14 +27,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/tournaments" 
-              className="btn-primary bg-fc-green hover:bg-fc-darkGreen text-white shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 shadow-md transition-all duration-300"
             >
               Турнирные таблицы
               <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link 
               to="/matches" 
-              className="btn-primary bg-white hover:bg-gray-100 text-fc-green border border-white shadow-md hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 border border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white/10 shadow-md transition-all duration-300"
             >
               Ближайшие матчи
               <ArrowRight size={18} className="ml-2" />
