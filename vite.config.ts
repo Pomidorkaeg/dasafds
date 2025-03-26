@@ -49,8 +49,8 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // For GitHub Pages, use "/" (absolute paths)
-  base: '/',
+  // For GitHub Pages, use "./" (relative paths)
+  base: './',
   // Добавляем оптимизации для более быстрой разработки
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
