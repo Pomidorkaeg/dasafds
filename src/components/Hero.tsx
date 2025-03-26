@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -18,18 +17,18 @@ const Hero = () => {
       
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <div className="animate-slide-up">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-fc-green mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             ФК <span className="text-fc-yellow">ГУДАУТА</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-fc-green max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-8">
             Футбольный клуб с богатой историей и традициями
           </p>
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
             <Link 
               to="/matches" 
-              className="btn-primary bg-fc-yellow hover:bg-fc-yellow/90 text-fc-darkGreen"
+              className="btn-primary bg-fc-yellow hover:bg-fc-yellow/90 text-fc-darkGreen shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Ближайшие матчи
               <ArrowRight size={18} />
@@ -37,9 +36,10 @@ const Hero = () => {
             
             <Link 
               to="/tournaments" 
-              className="btn-secondary bg-white/10 backdrop-blur-sm text-white border-white hover:bg-white hover:text-fc-green"
+              className="btn-primary bg-fc-green hover:bg-fc-darkGreen text-white border-2 border-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Турнирные таблицы
+              <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
         </div>
