@@ -2,29 +2,34 @@ import React, { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import TournamentCard from '@/components/TournamentCard';
 import { ArrowRight, CalendarDays, NewspaperIcon, Trophy, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getTournamentsList, Tournament } from '@/utils/api';
 
 const Index = () => {
-  const [tournaments, setTournaments] = useState<Tournament[]>([]);
-  const [loading, setLoading] = useState(true);
-  
-  useEffect(() => {
-    const fetchTournaments = async () => {
-      try {
-        const data = await getTournamentsList();
-        setTournaments(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching tournaments:", error);
-        setLoading(false);
-      }
-    };
-    
-    fetchTournaments();
-  }, []);
+  // Тестовые данные для турниров
+  const tournaments = [
+    {
+      id: '1',
+      name: 'Чемпионат Абхазии 2024',
+      description: 'Главный турнир сезона. Наша команда борется за первое место в группе.',
+      date: 'Текущий сезон',
+      image: 'https://images.unsplash.com/photo-1508098682722-e99c643e7f76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+    },
+    {
+      id: '2',
+      name: 'Кубок Абхазии',
+      description: 'Кубковый турнир. Команда вышла в четвертьфинал.',
+      date: 'Текущий сезон',
+      image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=2574&auto=format&fit=crop'
+    },
+    {
+      id: '3',
+      name: 'Турнир памяти А.П. Соколова',
+      description: 'Традиционный турнир памяти основателя клуба.',
+      date: 'Июнь 2024',
+      image: 'https://images.unsplash.com/photo-1518164147695-36c13dd568f5?q=80&w=2670&auto=format&fit=crop'
+    }
+  ];
   
   // Sample news for the homepage
   const recentNews = [
